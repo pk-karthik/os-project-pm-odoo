@@ -720,6 +720,12 @@ class IrModelConstraint(models.Model):
 
         self.unlink()
 
+    @api.multi
+    def copy(self, default=None):
+        default = dict(default or {})
+        default['name'] = self.name + '_copy'
+        return super(IrModelConstraint, self).copy(default)
+
 
 class IrModelRelation(models.Model):
     """
@@ -1345,7 +1351,7 @@ class IrModelData(models.Model):
 class WizardModelMenu(models.TransientModel):
     _name = 'wizard.ir.model.menu.create'
 
-    menu_id = fields.Many2one('ir.ui.menu', string='Parent Menu', required=True)
+    menu_id = fields.Many2one('ir.ui.menu', string='Parent Menu', required=True, ondelete='cascade')
     name = fields.Char(string='Menu Name', required=True)
 
     @api.multi

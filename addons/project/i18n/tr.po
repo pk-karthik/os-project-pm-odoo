@@ -2826,7 +2826,7 @@ msgstr ""
 #: model:project.task,legend_done:project.project_task_19
 #: model:project.task.type,legend_done:project.project_stage_3
 msgid "Ready to reopen"
-msgstr ""
+msgstr "Tekrar açılmaya hazır"
 
 #. module: project
 #. openerp-web
@@ -3388,6 +3388,8 @@ msgid ""
 "This stage is folded in the kanban view when there are no records in that "
 "stage to display."
 msgstr ""
+"Bu aşamada gösterilecek kayıt kalmadığında kanban görünümünde katlanmış "
+"aşamadır."
 
 #. module: project
 #: model:ir.ui.view,arch_db:project.project_planner
